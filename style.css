@@ -1,0 +1,94 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: 0.4s;
+}
+
+.input {
+  visibility: hidden;
+}
+
+.label {
+  position: absolute;
+  background-color: lightgray;
+  border-radius: 20px;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.circle {
+  width: 34px;
+  height: 34px;
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  animation: toggleOff 0.2s linear forwards;
+}
+
+.input:checked + .label {
+  background-color: white;
+}
+
+.input:checked + .label .circle {
+  animation: toggleOn 0.2s linear forwards;
+  background-color: black;
+}
+
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes toggleOff {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
